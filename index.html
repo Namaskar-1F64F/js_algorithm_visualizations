@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<!-- CSS -->
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles/styles.css">
+
+<!-- p5js scripts-->
+<script src="p5/p5.js"></script>
+<script src="p5/addons/p5.sound.min.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <ul class="header-list">
+                <li><label for="alg-select">Algorithm: </label>
+                    <select id="alg-select" name="algorithms">
+                        <option value="quick">Quick Sort</option>
+                        <option value="merge">Merge Sort</option>
+                        <option value="bubble">Bubble Sort</option>
+                        <option value="selection">Selection Sort</option>
+                        <option value="insertion">Insertion Sort</option>
+                        <option value="shell">Shell Sort</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="itemCountSlider">Item Count:</label>
+                    <input type="range" min="10" max="400" value="100" step="5" class="slider" id="itemCountSlider">
+                    <span id="slide-itemCount">100</span>
+                </li>
+                <li>
+                    <label for="delaySlider">Delay:</label>
+                    <input type="range" min="0" max="500" value="10" step="10" class="slider" id="delaySlider">
+                    <span id="slide-delay">50</span>ms
+                </li>
+                <li>
+                    <button type="button" id="run">Run Algorithm</button>
+                </li>
+                <li>
+                    <button type="button" id="shuffle-items">Shuffle</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div id="p5js"></div>
+        </div>
+
+        <div class="footer">
+            <ul class="info-list">
+                <li class="list-title">Stats</li>
+                <li>item count: <span id="alg-items">0</span></li>
+                <li>compares: <span id ="alg-compares">0</span></li>
+                <li>swaps: <span id ="alg-swaps">0</span></li>
+                <li>delay: <span id="alg-delay">0</span>ms</li>
+                <li>total runtime: <span id ="alg-runtime">n/a</span></li>
+            </ul>
+            <ul class="info-list wide">
+                <li class="list-title">About the Algorithm</li>
+                <li><span id="alg-about">n/a</span></li>
+            </ul>
+            <ul class="info-list">
+                <li class="list-title">Algorithm Efficiency</li>
+                <li>best case: <span id="alg-best">n/a</span></li>
+                <li>average case: <span id ="alg-avg">n/a</span></li>
+                <li>worst case: <span id ="alg-worst">n/a</span></li>
+                <li>in place: <span id="alg-place">n/a</span></li>
+                <li>stable: <span id ="alg-stable">n/a</span></li>
+            </ul>
+            <ul class="info-list wide">
+                <li class="list-title">Disclaimer</li>
+                <li class="disclaimer">The algorithms visualized here and their total runtimes will not be a perfect representation of their true speeds.
+                    This is due to multiple factors. Firstly, added code to track events and store info for the viewer which adds additional work.
+                    More importantly, the visualization process is delayed during swaps but not array accesses, and this skews timing. But, I chose to due this
+                    for better visualization.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<!-- jQuery first, then Bootstrap JS. -->
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- p5js modules -->
+<script type="module" src="js/app.js"></script>
+
+</html>
